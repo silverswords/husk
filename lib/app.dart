@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:husk/global.dart';
 import 'package:husk/pages/tabs/page.dart';
 
 class Application extends StatelessWidget {
@@ -6,13 +8,11 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: applicationTheme,
       initialRoute: '/',
       routes: {
         '/': (context) => Main(),
-      }, 
+      },
     );
   }
 }
