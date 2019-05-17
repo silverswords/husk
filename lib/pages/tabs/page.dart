@@ -18,16 +18,9 @@ class MainWidget extends StatefulWidget {
 
   @override
   _MainWidgetState createState() => _MainWidgetState();
-  
 }
 
 class _MainWidgetState extends State<MainWidget> {
-  static final List<Widget> _tabWidgets = <Widget>[
-    Home(),
-    Cart(),
-    Profile(),
-  ];
-
   int _selectedIndex = 0;
 
   void _onTapped(int index) {
@@ -41,7 +34,14 @@ class _MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _tabWidgets.elementAt(_selectedIndex),
+      body: IndexedStack(
+        children: <Widget>[
+          Home(),
+          Cart(),
+          Profile(),
+        ],
+        index: _selectedIndex,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
