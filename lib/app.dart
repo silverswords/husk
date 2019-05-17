@@ -9,6 +9,7 @@ class Application extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: applicationTheme,
+      navigatorObservers: [routeObserver],
       initialRoute: '/',
       routes: {
         '/': (context) => Main(),
