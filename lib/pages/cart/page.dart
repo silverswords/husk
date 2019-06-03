@@ -1,12 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:fish_redux/fish_redux.dart';
 
-class Cart extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("Cart"),
-      ),
-    );
-  }
+import 'state.dart';
+import 'view.dart';
+
+class Cart extends Page<CartState, dynamic> {
+  Cart()
+    : super(
+        initState: initialState,
+        view: buildView,
+        middleware: <Middleware<CartState>>[
+          logMiddleware(tag: 'CartPage'),
+        ],
+      );
 }

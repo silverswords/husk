@@ -36,9 +36,9 @@ class _MainWidgetState extends State<MainWidget> {
     return Scaffold(
       body: IndexedStack(
         children: <Widget>[
-          Home(),
-          Cart(),
-          Profile(),
+          Home().buildPage(null),
+          Cart().buildPage(null),
+          Profile().buildPage(null),
         ],
         index: _selectedIndex,
       ),
